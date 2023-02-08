@@ -1,8 +1,10 @@
 const panels = document.querySelectorAll('.panel');
 
 function openPanel() {
-    panels.forEach(panel => panel.classList.remove('open'));
-    this.classList.add('open');
+    panels.forEach(panel => {
+        if (panel !== this) panel.classList.remove('open')
+    });
+    this.classList.toggle('open');
 }
 
 function showText(e) {
